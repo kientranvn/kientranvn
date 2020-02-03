@@ -1,7 +1,11 @@
-*.gem
-.bundle
-.sass-cache
 _site
-Gemfile.lock
 .DS_Store
-vendor
+*.sublime-project
+*.sublime-workspace
+codekit-config.json
+node_modules
+.sass-cache
+.jekyll-metadata
+.bundle
+vendor/
+images/.comments

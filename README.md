@@ -1,146 +1,67 @@
-# plainwhite
+# Minimalist
 
-Simplistic jekyll portfolio-style theme for writers.
+[![Build Status](https://travis-ci.org/Trybnetic/minimalist.svg?branch=master)](https://travis-ci.org/Trybnetic/minimalist)
+[![License](https://img.shields.io/github/license/Trybnetic/minimalist.svg)](https://github.com/Trybnetic/minimalist/blob/master/LICENSE.txt)  
 
-**Demo**: [thelehhman.com](https://thelehhman.com)
-
-![plainwhite theme preview](/screenshot.png)
-
-## Installation on Github Pages
-
-Add this line to your site's `_config.yml`:
-
-```yaml
-remote_theme: thelehhman/plainwhite-jekyll
-```
+Minimalist is a simple and light weighted [jekyll](http://jekyllrb.com/) theme. It focuses on a minimalistic design but still providing all functionality for a personal blog.
 
 ## Installation
-
-Add this line to your Jekyll site's `Gemfile`:
-
-```ruby
-gem "plainwhite"
+To install Open Recipes you have to install [jekyll](https://jekyllrb.com). After successfully installing jekyll you have to clone this repository to your computer:
 ```
-
-And add this line to your Jekyll site's `_config.yml`:
-
-```yaml
-theme: plainwhite
+git clone https://github.com/Trybnetic/minimalist.git
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install plainwhite
+Then switch into the directory and start jekyll:
+```
+cd minimalist
+bundle exec jekyll serve
+```
+The last command starts a webserver on your local machine. Now you should have a copy of the site running at `http://127.0.0.1:4000/`. Open this url with your webbrowser and explore the site.  
+By changing some of the files (except of the `config.yml`) the changes will be displayed immediately.
 
 ## Usage
+After you successfully installed the theme on your computer you can add additional blog posts by creating new files in the `_posts` directory. The new files have to follow the name convention `year-month-day-title.md`.
 
-The "plainwhite" key in \_config.yml is used to customize the theme data.
 
-```yaml
-plainwhite:
-  name: Adam Denisov
-  tagline: Developer. Designer
-  date_format: "%b %-d, %Y"
+## Post structure
+**Example:**
+```
+---
+layout: post
+title:  "Lorem ipsum"
+date:   2017-09-06 01:03:29 +0200
+categories: lorem ipsum
+---
 
-  social_links:
-    twitter: thelehhman
-    github: thelehhman
-    linkedIn: in/thelehhman # format: locale/username
+Eius ut fugiat omnis. Autem nihil dignissimos deserunt eum. In adipisci ipsum
+natus saepe facere. Aspernatur velit autem sed. Rerum provident non incidunt id
+expedita aliquam non. Eum sit saepe autem nam aut voluptatem non et.
+
+<!--more-->
+
+Sequi et ut consequatur et incidunt expedita provident. Iste ipsa eaque qui.
+Totam vitae quasi nulla aut aliquam harum. Quibusdam et deserunt possimus
+dolores voluptate facilis corrupti vero.
+
 ```
 
-**Updating Placeholder Image**
+Each post consits of a header and a body. In the header defined by the `---`, you have to make basic definitions concerning the blog post.   
+In the first line of the example the layout is specified. This should be `layout: post` for all blog post except you want to add a custom layout for a certain media type. In the second line the title of the blog post is specified. In the third line you have to add the date of publication which will be displayed on top of the blog post on the website. In the fourth and last line of the header you can add categories so your blog posts gets displayed at the categories site `/categories/<category>/`. The existing categories can be found in the `categories/` folder.  
+Finally, you can add `<!--more-->` in your text to indicate that the text till this delimiter should be used as a preview at the homepage.
 
-The placeholder portfolio image can be replaced by the desired image by placing it as `assets/portfolio.png` in your jekyll website.
-
-**Comments (Disqus)**
-
-Comments on posts can be enabled by specifying your disqus_shortname under plainwhite in `_config.yml`. For example,
-
-```yaml
-plainwhite:
-  disqus_shortname: games
+## Categories
+This theme supports using categories. If you want to add custom categories you need to add a `<your category name>.md` file to the `categories/` folder, where `<your category name>` denotes the name of the category you want to add.  
+Your `<your category name>.md` needs to contain the following lines:
 ```
-
-**Google Analytics**
-
-It can be enabled by specifying your analytics id under plainwhite in `_config.yml`
-
-```yaml
-plainwhite:
-  analytics_id: "< YOUR ID >"
+---
+layout: category
+category: <your category name>
+permalink: /categories/<your category name>/
+---
 ```
+The first line specifies that the layout of the rendered site is category. In the second line you have to specify the name of the category you want to add. And finally, you have to specify the link scheme to your category site.
 
-**Sitemap**
-
-It can be toggled by the following line to under plainwhite in `_config.yml`
-
-```yaml
-plainwhite:
-  sitemap: true
-```
-
-**Excerpts**
-
-Excerpts can be enabled by adding the following line to your `_config.yml`
-
-```yaml
-show_excerpts: true
-```
-
-**Layouts**
-
-- Home
-- Page
-- Post
-
-**Navigation**
-
-Navigation can be enabled by adding the following line to your `_config.yml`
-
-```yaml
-plainwhite:
-  navigation:
-    - title: My Work
-      url: "/my-work"
-    - title: Resume
-      url: "/resume"
-```
-
-**Multiline tagline**
-
-Tagline can be multiline in this way
-
-```yaml
-plainwhite:
-  tagline: |
-  First Line. 
-
-  Second Line. 
-
-  Third Line.
-```
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/thelehhman/plainwhite-jekyll. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Development
-
-To set up your environment to develop this theme, run `bundle install`.
-
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `plainwhite.gemspec` accordingly.
+## Host your own blog
+The simplest way to host your own blog with the [Minimalist](https://trybnetic.github.io/minimalist/) theme is to fork [the repository](https://github.com/Trybnetic/minimalist/) and use the [gh-pages](https://pages.github.com/) functionality provided by [GitHub](https://github.com/).
 
 ## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## More themes
-
-- [Texture](https://github.com/thelehhman/texture)
+This jekyll theme is [licensed under the MIT license](https://github.com/Trybnetic/minimalist/blob/master/LICENSE.txt). Check the license on whether and how you are allowed to use, modify and distribute this theme.
