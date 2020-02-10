@@ -14,3 +14,8 @@ Minimalist is a simple and light weighted [jekyll](http://jekyllrb.com/) theme. 
 email: kientran@paalen.com
 wesite: paalen.com
 blog: kientranvn.github.io
+
+... which is shown in the screenshot below:
+![My logo](/assets/images/klogo.png)
+
+... you can [get the CV](/assets/CV.pdf) directly.
