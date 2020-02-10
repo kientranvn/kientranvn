@@ -9,6 +9,6 @@ Minimalist is a simple and light weighted [jekyll](http://jekyllrb.com/) theme. 
 
 ### Contact
 email: kientran@paalen.com
-wesite: paalen.com
+.wesite: paalen.com
 
 blog: kientranvn.github.io
