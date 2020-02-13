@@ -1,6 +1,6 @@
 ---
 layout: category
-category: update
-permalink: /categories/update/
+category: blog
+permalink: /categories/blog/
 ---
 This is an example description.
